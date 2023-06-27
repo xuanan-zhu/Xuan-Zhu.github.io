@@ -1,0 +1,133 @@
+/* Reset CSS */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #333;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 雪花效果 */
+body {
+    position: relative;
+    height: 100vh;
+}
+
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.snowflake {
+    position: absolute;
+    color: lightblue;
+    font-size: 2rem;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+    background-color: transparent; /* 添加此样式规则 */
+}
+
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.snowflake {
+    position: absolute;
+    color: lightblue;
+    font-size: 2rem;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+}
+
+.vertical {
+    animation-name: snowfall-vertical;
+}
+
+.diagonal {
+    animation-name: snowfall-diagonal;
+}
+
+@keyframes snowfall-vertical {
+    0% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) scale(0.2);
+        opacity: 0;
+    }
+}
+
+@keyframes snowfall-diagonal {
+    0% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) scale(0.2);
+        opacity: 0;
+    }
+}

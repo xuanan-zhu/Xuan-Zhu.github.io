@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background-color: #f2f2f2;
+    background-color: #000;
     padding: 20px;
 }
 
@@ -42,9 +42,39 @@ main {
 }
 
 footer {
-    background-color: #f2f2f2;
+    float: end;
+    background-color: #000;
     padding: 20px;
     text-align: center;
+}
+
+/* 添加样式以创建50%宽度的框 */
+.content-box {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.content-box-left {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.left-image {
+    width: 10%;
+    float: left;
+    margin-right: 2px;
+}
+
+.right-image {
+    width: 10%;
+    float: right;
+    margin-left: 2px;
 }
 
 /* 雪花效果 */
@@ -131,3 +161,4 @@ body {
         opacity: 0;
     }
 }
+

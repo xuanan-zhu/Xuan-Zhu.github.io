@@ -1,8 +1,10 @@
 /* Reset CSS */
-body, h1, h2, p, ul, li {
+body, p, h1, h2, ul, li {
     margin: 0;
     padding: 0;
+    color: white;
 }
+
 
 /* Global Styles */
 body {
@@ -51,6 +53,14 @@ footer {
 /* 添加样式以创建50%宽度的框 */
 .content-box {
     width: 50%;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.center-right-content-box {
+    width: 75%;
     margin: 0 auto;
     border: 1px solid transparent;
     padding: 20px;
@@ -162,3 +172,13 @@ body {
     }
 }
 
+/*适配手机*/
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>关于我</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class="snowflakes"></div>
+<header>
+    <h1>代号G50迎来了他最后的任务，同时这也是梦开始的地方</h1>
+</header>
+
+
+<main>
+    <section class="content-box-left">
+        <h2>a-故事线</h2>
+        <br>
+        <h1>Linux环境的创建与软件的安装</h1>
+        <p>因为笔者之前都是在Windows环境进行代码的调试，所以这次走Linux路线（完全用Linux），用联想G50（7年前的老古董）来完成这一系列操作，在卡顿期间完成写作。</p>
+
+        <h2>VMware 安装完毕</h2>
+        <div class="image"><img src="./01imgs/VMfinished.png"></div>
+
+        <h2>CentOS 系统搞掂</h2>
+        <br>
+        <div class="image"><img src="./01imgs/centos_ok.png"></div>
+        <br>
+        <h2>系统也安装成功</h2>
+        <div class="image"><img src="./01imgs/sys_ok.png"></div>
+        <br>
+        <p>jupyter d2l torch torchvision一套打包带走，再搞个插件帮助写代码，完美。</p>
+        <br>
+        <div class="image"><img src="./01imgs/Q.png"></div>
+        <br>
+        <p>一套操作体验非常好，报错基本上是版本低的缘故。</p>
+        <br>
+        <p>到这前期就铺设好了，什么？你问我，写了那么少，是电脑不卡吗？不是电脑不卡，而是忘记关typer-v服务，导致与VMware冲突，蓝屏了，写的东西没了。</p>
+        <p>不过通过查阅资料，发现VMware与微软合作了，只需要升升版本就可以鱼和熊掌一起间得了。但是我就懒得升版本，毕竟这电脑配置，Windows下我的电脑少用到typer-v服务哈。用到再改回来也不是不行，hh。</p>
+        <br>
+        <p>后面发现重启虚拟机后，jupyter note引用torch包失败了，后面发现是因为我用的是pip3下载的包，放在了虚拟机本地python3.6里面并不是conda的python3.7里面，所以jupyther note默认用python3，而python3默认连接conda里面的3.7，这就导致了import包失败，那么直接删除python3.7这样就可以让python3默认3.6版本了，这可太天真了，直接conda都用不了，那么再把python3.6复制一份过去呢？大聪明，里面的配置还是3.7还是不行的，所以找个低版本的conda重装，那么之前的jupyter note用3.7运行的也不行了，可以重装了，因为你连启动都启动不了（内核没了），当然有个很好的办法，就是换内核，把内核换成3.6，但是换内核需要先安装3.6内核，这需要3.6的conda环境，当时我是直接在conda里面安装3.6，建立环境，然后安装内核，最后完美运行。</p>
+        <p>但是我现在还一直留存疑问，为什么当时内核Python3（3.7）的时候import成功，而重启后不行了呢？可能是内存加载的原因吗？</p>
+        <br>
+        <h2>总结</h2>
+        <p>pip下载不了的pip3来，pip3 > pip （pip经常性漏东西和装不了，我的天），这里的大多错误可以归结于版本的问题，版本之间的不兼容就好像我看不起你，你也看不起我一样，无法互相靠近，而我在此做的角色就是了解版本之间的差距，理解他们的关系，调节他们之间的矛盾。就是“和事佬”啦</p>
+
+        <br>
+        <h2>b-故事线</h2>
+        <br>
+        <p>年迈的G50开启了他的最伟大的航海，去挑战前方未知的困难，也许会粉身碎骨，那又何欲何求？在码头他遇到了三两个同行的人，他们深藏不漏
+        似乎内心藏着惊天地泣鬼神的秘密，G50给过船票，刚踏上船板，那几个同行的人便吵了起来，G50没有说话，听了一下他们的吵架内容，完全听不懂
+        也许是中途加入，亦或是能力有限，他们根本不在一个频道。G50很懊恼，他不知道该如何是好，但是他内心有一句话不断重复从无到有慢慢大声
+            ，是什么呢？ 再听一遍，噢，是“patience is the key of life”，原来如此，是我的内心让我静下心来去倾听吗？G50如此想道。他缓缓靠去
+        ，同行者们的争吵声也不断变得清晰。原来他们因为互相看不惯而口舌相向，这才是第一天他们就开始闹矛盾了，而且还是为了这么主观的东西。
+        G50立马不乐意了，说道，“我不清楚谁对谁错，我们每个人的一生中要面对很多形形色色的人，有看不惯的很正常，我们是出来航海，都是为了自己的
+            目标。我看你们和我一样，都不单单为了可能存在的宝藏，可能是为了征服大海，探索未知，可能是为了换个活法，而我就是想证明自己还没老，
+            仅此而已。”他们看了看年迈的G50，拍了拍G50的肩膀，最后握手言和了。</p>
+    </section>
+</main>
+
+<footer>
+    <p>版权所有 &copy; 2023 G blog</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

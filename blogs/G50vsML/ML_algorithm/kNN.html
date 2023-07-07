@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>kNN的自我介绍</title>
+    <style>
+        a {
+            display: block;
+            color: #fff;
+            text-align: right;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        body {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            letter-spacing: 1px; /* 调整字体间距 */
+            font-size: 20px; /* 调整字体大小 */
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        pre code {
+            display: block;
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+
+        footer {
+            float: end;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<a href="./ML_algorithm_catalog.html">返回</a>
+<h1>KNN的简单介绍</h1>
+<p>这篇博客将简单通俗地介绍一个用于数据分类的Python代码。机器学习，无非就是六个步骤，<br>
+    1）	收集数据（海纳百川，各现神通）<br>
+    2）	准备输入数据（格式）<br>
+    3）	分析输入数据（人工干预，人工分析数据，瞪眼法）<br>
+    4）	训练算法（开始学习）<br>
+    5）	测试算法（测试成功率，不满意可以回到4，通常是数据准备和处理有关）<br>
+    6）	使用算法将机器学习转化为应用程序<br>
+</p>
+
+<h2>1. 收集数据</h2>
+<p>我们拿网上相亲的例子来说明这个基本算法</p>
+<br>
+<h2>2. 准备输入数据</h2>
+<pre><code>
+    def createDataSet():
+    group = array([[1.0,1.1],[1.0,1.0],[0,0],[0,0.1]])
+    labels = ['A','A','B','B']
+    return group, labels
+</code></pre>
+<p>数据的格式是numpy包里面的array的格式，array括号里面就是我们的数据，里面有个中括号，就是线性代数一样，用[]来
+表示矩阵，里面每一个中括号包含特征数据，一个中括号对应一个单位，并且对应labels中的对应类标签</p>
+<br>
+
+<h2>3. 分析输入数据</h2>
+<p>既然我们要做数据分析，我们当然应该画图对数据可视化啦，这样我们就能根据图对冷冰冰的数据进行初步分析</p>
+<pre><code>
+
+    import matplotlib
+    import matplotlib.pyplot as plt
+
+    fig, ax = plt.subplots()
+    ax.scatter(datingDataMat[:,0], datingDataMat[:,1],15.0*array(datingLabels),15.0*array(datingLabels))
+
+  </code></pre>
+<img src="./KNN代码与数据/visitable.png" alt="图呢？">
+<p>我们将数据导入，然后把取第一和第二个特征值，横坐标是第一个特征值，纵坐标是第二个特征值，颜色就是类标签来分类的
+可以看到很明显的三坨的东西，所以其实按这两个特征值来分类也不错</p>
+
+
+<h2>4. 训练算法</h2>
+kNN无需调试参数，他是根据欧氏距离来划分类别的，他需要数据集，当你要判断手上的树叶是什么种类时，数据集就像是一个树叶标本馆，
+里面全是树叶和对应种类信息，我们拿着手上的树叶进去馆内逐一比对，找出比较像的树叶，用这个树叶的信息来表示你手上的树叶种类。
+
+
+<h2>5. 测试算法</h2>
+<h3>K-最近邻算法</h3>
+<p>这个算法刚刚已经讲过一点了，这里细讲一遍，我们拿着手中的未知类型的数据(叶子)，走进数据集(树叶标本馆)，对比每个数据的特征值
+计算他们的距离(各特征值相差的平方求和代表距离，数据集的每个数据都要计算距离)，这样我们就得出未知数据与数据集数据的距离，
+由小到大排列，取前K个数据，然后看看这K个数据的种类，这K个数据种类出现最多的，则代表未知数据的种类</p>
+<pre><code>
+    from numpy import *
+    import operator
+
+    def classify0(inX, dataSet, labels, k):
+    #定义分类函数，参数是未知数据X，数据集，数据集对应的类标签，K值(选秀个数)
+    dataSetSize = dataSet.shape[0]
+    #用shape方法得出dataSet的形状比如dataSet是三行四列，得到的结果是[3,4]，而这里取第0个也就是3，也就是样本的个数
+    diffMat = tile(inX, (dataSetSize,1)) - dataSet
+    #tile有平铺展示的意思，这个方法我的理解是，制造一个dataSetSize行一列的空矩阵，然后将inX复制很多份平铺进这个空矩阵，然后矩阵减法。
+    sqDiffMat = diffMat**2
+    #将矩阵各数据平方
+    disDistances= sqDiffMat.sum(axis = 1)
+    #将各行分别求和
+    distances = disDistances**0.5
+    #开方
+    sortedDistIndicies = distances.argsort()
+    #来一手排序，但是这个排序还保留了原来的索引值
+    classCount={}
+    for i in range(k):
+        voteIlabel = labels[sortedDistIndicies[i]]
+    #根据索引值得标签
+        classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1
+    sortedClassCount = sorted(classCount.items(),key = operator.itemgetter(1),reverse=True)
+    #按项目（键）的值中的第一个数作排序的依据
+    return sortedClassCount[0][0]
+    #一个个统计类型，最后选择计数最多的即可，因为sortClassCount是字典，所以取[0]是第一个类别：计数，我们要类别就行所以再取[0]
+  </code></pre>
+<br>
+<p>但是为我们发现了问题,从之前可视化的图我们可以引发疑问，如果一个特征值范围在0.01-0.1之间，而一个特征值范围在1-10000之间，
+这样一计算距离，范围的特征值影响距离大，而范围小的影响小，这个是因为他们单位不一样，那么我们要对特征值“一视同仁”，
+对数据进行归一化</p>
+<br>
+<pre>
+    <code>
+        def autoNorm(dataSet):
+    minVals = dataSet.min(0) #按列取最小
+    maxVals = dataSet.max(0)
+    ranges = maxVals - minVals
+    normDataSet = zeros(shape(dataSet))
+    m = dataSet.shape[0]
+    normDataSet = dataSet - tile(minVals, (m,1))
+    normDataSet = normDataSet/tile(ranges, (m,1))   #element wise divide
+    return normDataSet, ranges, minVals
+    </code>
+</pre>
+<br>
+
+
+<h3>检验准确性</h3>
+<pre><code>
+def datingClassTest():
+    hoRatio = 0.50      #取一半作测试
+    datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')       #加载数据
+    normMat, ranges, minVals = autoNorm(datingDataMat) #
+    m = normMat.shape[0]
+    numTestVecs = int(m*hoRatio)
+    errorCount = 0.0
+    for i in range(numTestVecs):
+        classifierResult = classify0(normMat[i,:],normMat[numTestVecs:m,:],datingLabels[numTestVecs:m],3)
+        print ("the classifier came back with: %d, the real answer is: %d" % (classifierResult, datingLabels[i]))
+        if (classifierResult != datingLabels[i]): errorCount += 1.0
+    print("the classifier came back with: %d, the real answer is: %d" % (classifierResult, datingLabels[i]))
+    print (errorCount)
+  </code></pre>
+<p>取部分数据当作测试数据，就相当于你知道这个叶子是什么种类，你装不知道，走进标本馆，去比对寻找最后推断出种类，然后再
+与真实的种类相比，检验准确率。知道答案就是所熟知的“监督学习”</p>
+
+
+
+<h2>6. 应用算法</h2>
+<pre><code>
+
+    def img2vector(filename):
+    returnVect = zeros((1,1024))
+    fr = open(filename)
+    for i in range(32):
+        lineStr = fr.readline()
+        for j in range(32):
+            returnVect[0,32*i+j] = int(lineStr[j])
+    return returnVect
+
+    from os import listdir
+
+    def handwritingClassTest():
+    hwLabels = []
+    trainingFileList = listdir('trainingDigits')           #load the training set
+    m = len(trainingFileList)
+    trainingMat = zeros((m,1024))
+    for i in range(m):
+        fileNameStr = trainingFileList[i]
+        fileStr = fileNameStr.split('.')[0]     #take off .txt
+        classNumStr = int(fileStr.split('_')[0])
+        hwLabels.append(classNumStr)
+        trainingMat[i,:] = img2vector('trainingDigits/%s' % fileNameStr)
+    testFileList = listdir('testDigits')        #iterate through the test set
+    errorCount = 0.0
+    mTest = len(testFileList)
+    for i in range(mTest):
+        fileNameStr = testFileList[i]
+        fileStr = fileNameStr.split('.')[0]     #take off .txt
+        classNumStr = int(fileStr.split('_')[0])
+        vectorUnderTest = img2vector('testDigits/%s' % fileNameStr)
+        classifierResult = classify0(vectorUnderTest, trainingMat, hwLabels, 3)
+        if (classifierResult != classNumStr):
+            errorCount += 1.0
+            print ("the classifier came back with: %d, the real answer is: %d" % (classifierResult, classNumStr))
+    print ("\nthe total number of errors is: %d" % errorCount)
+    print ("\nthe total error rate is: %f" % (errorCount/float(mTest)))
+
+  </code></pre>
+<img src="./KNN代码与数据/hw.png" alt="图呢？">
+<p>
+    这里就不作过多解释了，这里img2vector就是将图片矩阵转变成1024个特征值，过程一样
+</p>
+
+例子来自：Machine Learning in Action，若侵犯版权，请联系我删除，谢谢。
+<footer>
+    <p>版权所有 &copy; 2023 G blog</p>
+</footer>
+</body>
+</html>

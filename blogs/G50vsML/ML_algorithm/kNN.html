@@ -2,54 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+
     <title>kNN的自我介绍</title>
-    <style>
-        a {
-            display: block;
-            color: #fff;
-            text-align: right;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        body {
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            letter-spacing: 1px; /* 调整字体间距 */
-            font-size: 20px; /* 调整字体大小 */
-            line-height: 1.6;
-        }
-
-        h1 {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            color: #333;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        pre code {
-            display: block;
-            background-color: #f4f4f4;
-            padding: 10px;
-            overflow-x: auto;
-            font-size: 14px;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-
-        footer {
-            float: end;
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
 <a href="./ML_algorithm_catalog.html">返回</a>
@@ -67,7 +24,7 @@
 <p>我们拿网上相亲的例子来说明这个基本算法</p>
 <br>
 <h2>2. 准备输入数据</h2>
-<pre><code>
+<pre><code class="language-javascript">
     def createDataSet():
     group = array([[1.0,1.1],[1.0,1.0],[0,0],[0,0.1]])
     labels = ['A','A','B','B']
@@ -79,7 +36,7 @@
 
 <h2>3. 分析输入数据</h2>
 <p>既然我们要做数据分析，我们当然应该画图对数据可视化啦，这样我们就能根据图对冷冰冰的数据进行初步分析</p>
-<pre><code>
+<pre><code class="language-javascript">
 
     import matplotlib
     import matplotlib.pyplot as plt
@@ -103,7 +60,7 @@ kNN无需调试参数，他是根据欧氏距离来划分类别的，他需要�
 <p>这个算法刚刚已经讲过一点了，这里细讲一遍，我们拿着手中的未知类型的数据(叶子)，走进数据集(树叶标本馆)，对比每个数据的特征值
 计算他们的距离(各特征值相差的平方求和代表距离，数据集的每个数据都要计算距离)，这样我们就得出未知数据与数据集数据的距离，
 由小到大排列，取前K个数据，然后看看这K个数据的种类，这K个数据种类出现最多的，则代表未知数据的种类</p>
-<pre><code>
+<pre><code class="language-javascript">
     from numpy import *
     import operator
 
@@ -137,7 +94,7 @@ kNN无需调试参数，他是根据欧氏距离来划分类别的，他需要�
 对数据进行归一化</p>
 <br>
 <pre>
-    <code>
+    <code class="language-javascript">
         def autoNorm(dataSet):
     minVals = dataSet.min(0) #按列取最小
     maxVals = dataSet.max(0)
@@ -153,7 +110,7 @@ kNN无需调试参数，他是根据欧氏距离来划分类别的，他需要�
 
 
 <h3>检验准确性</h3>
-<pre><code>
+<pre><code class="language-javascript">
 def datingClassTest():
     hoRatio = 0.50      #取一半作测试
     datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')       #加载数据
@@ -174,7 +131,7 @@ def datingClassTest():
 
 
 <h2>6. 应用算法</h2>
-<pre><code>
+<pre><code class="language-javascript">
 
     def img2vector(filename):
     returnVect = zeros((1,1024))
@@ -223,5 +180,6 @@ def datingClassTest():
 <footer>
     <p>版权所有 &copy; 2023 G blog</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/prismjs"></script></script>
 </body>
 </html>

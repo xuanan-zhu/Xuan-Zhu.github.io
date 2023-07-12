@@ -1,0 +1,55 @@
+@import url('./prism.css');
+
+
+a {
+    display: block;
+    color: #fff;
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px; /* 调整字体间距 */
+    font-size: 20px; /* 调整字体大小 */
+    line-height: 1.6;
+    background-color: #000;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+p {
+    margin-bottom: 15px;
+}
+
+
+footer {
+    float: end;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+/*适配手机*/
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

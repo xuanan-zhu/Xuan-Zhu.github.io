@@ -1,6 +1,12 @@
 @import url('./prism.css');
 
 
+p, h1, h2, ul, li {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
 a {
     display: block;
     color: #fff;

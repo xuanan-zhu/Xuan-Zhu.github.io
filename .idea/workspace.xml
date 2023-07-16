@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfe48b1a-2244-470f-a310-e724f219e8e5" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/logistic回归.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/逻辑回归代码与数据/horseColicTest.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/逻辑回归代码与数据/horseColicTraining.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/逻辑回归代码与数据/testSet.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/逻辑回归代码与数据/逻辑回归.ipynb" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/Beyes.html" afterPath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/Beyes.html" />
+      <change beforePath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/ML_algorithm_catalog.html" afterPath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/ML_algorithm_catalog.html" />
+      <change beforePath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/kNN.html" afterPath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/kNN.html" />
       <change beforePath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/styles.css" afterPath="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/styles.css" />
       <change beforePath="$PROJECT_DIR$/blogs/G50vsML/styles.css" afterPath="$PROJECT_DIR$/blogs/G50vsML/styles.css" />
+      <change beforePath="$PROJECT_DIR$/styles.css" afterPath="$PROJECT_DIR$/styles.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +28,8 @@
       <file leaf-file-name="catalog.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blogs/G50vsML/catalog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            <state relative-caret-position="354">
+              <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -29,8 +38,28 @@
       <file leaf-file-name="ML_algorithm_catalog.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/ML_algorithm_catalog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+            <state relative-caret-position="474">
+              <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logistic回归.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/logistic回归.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="252" column="58" lean-forward="true" selection-start-line="252" selection-start-column="58" selection-end-line="252" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="horseColicTest.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/逻辑回归代码与数据/horseColicTest.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -39,9 +68,11 @@
       <file leaf-file-name="Beyes.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/Beyes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="346" column="51" lean-forward="true" selection-start-line="346" selection-start-column="51" selection-end-line="346" selection-end-column="51" />
-              <folding />
+            <state relative-caret-position="-7099">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="e#13133#13139#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,7 +80,7 @@
       <file leaf-file-name="classifyTree.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/classifyTree.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
+            <state relative-caret-position="7120">
               <caret line="356" column="22" lean-forward="false" selection-start-line="356" selection-start-column="22" selection-end-line="356" selection-end-column="22" />
               <folding>
                 <element signature="e#11874#11880#0" expanded="true" />
@@ -58,21 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/about.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -91,8 +112,8 @@
       <file leaf-file-name="kNN.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/kNN.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="85" column="61" lean-forward="false" selection-start-line="85" selection-start-column="61" selection-end-line="85" selection-end-column="61" />
+            <state relative-caret-position="821">
+              <caret line="182" column="60" lean-forward="true" selection-start-line="182" selection-start-column="60" selection-end-line="182" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -102,18 +123,10 @@
         <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/styles.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prism.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/prism.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="75" lean-forward="false" selection-start-line="5" selection-start-column="75" selection-end-line="5" selection-end-column="75" />
-              <folding />
+              <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+              <folding>
+                <marker date="1689395265380" expanded="true" signature="694:802" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,16 +168,17 @@
         <option value="$PROJECT_DIR$/script.js" />
         <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/ML_algorithm.html" />
         <option value="$PROJECT_DIR$/blogs/G50vsML/dream_start01.html" />
-        <option value="$PROJECT_DIR$/blogs/G50vsML/catalog.html" />
         <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/prism.css" />
         <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/codecp.js" />
-        <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/kNN.html" />
         <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/Clipboard.js" />
         <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/classifyTree.html" />
-        <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/ML_algorithm_catalog.html" />
         <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/Beyes.html" />
         <option value="$PROJECT_DIR$/blogs/G50vsML/styles.css" />
         <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/styles.css" />
+        <option value="$PROJECT_DIR$/blogs/G50vsML/catalog.html" />
+        <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/ML_algorithm_catalog.html" />
+        <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/kNN.html" />
+        <option value="$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/logistic回归.html" />
       </list>
     </option>
   </component>
@@ -174,9 +188,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="163" />
-    <option name="y" value="59" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="196" />
+    <option name="y" value="48" />
     <option name="width" value="1531" />
     <option name="height" value="941" />
   </component>
@@ -195,10 +209,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,10 +237,19 @@
               <item name="G50vsML" type="462c0819:PsiDirectoryNode" />
               <item name="ML_algorithm" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Xuanan-zhu.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xuanan-zhu.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="blogs" type="462c0819:PsiDirectoryNode" />
+              <item name="G50vsML" type="462c0819:PsiDirectoryNode" />
+              <item name="ML_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="逻辑回归代码与数据" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -243,6 +265,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\github_code\Xuanan-zhu.github.io\blogs\G50vsML\ML_algorithm\逻辑回归代码与数据" />
       <recent name="C:\Users\Administrator\Desktop\github_code\Xuanan-zhu.github.io\blogs\G50vsML" />
       <recent name="C:\Users\Administrator\Desktop\github_code\Xuanan-zhu.github.io\images\about_images" />
     </key>
@@ -367,15 +390,16 @@
       <workItem from="1688724554220" duration="8130000" />
       <workItem from="1689159135425" duration="14209000" />
       <workItem from="1689343263505" duration="6929000" />
-      <workItem from="1689392935476" duration="155000" />
+      <workItem from="1689392935476" duration="1331000" />
+      <workItem from="1689518485654" duration="5065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53655000" />
+    <option name="totallyTimeSpent" value="59896000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="163" y="59" width="1531" height="941" extended-state="1" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -390,7 +414,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18599863" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19742489" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -418,25 +442,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -474,7 +483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="13" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -520,7 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,7 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="26" column="62" lean-forward="false" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -652,14 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/G50vsML/catalog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -674,18 +672,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/kNN.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="85" column="61" lean-forward="false" selection-start-line="85" selection-start-column="61" selection-end-line="85" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -701,22 +691,16 @@
     <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/ML_algorithm_catalog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
-          <folding />
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <marker date="1689395265380" expanded="true" signature="694:802" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/classifyTree.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="7120">
           <caret line="356" column="22" lean-forward="false" selection-start-line="356" selection-start-column="22" selection-end-line="356" selection-end-column="22" />
           <folding>
             <element signature="e#11874#11880#0" expanded="true" />
@@ -724,11 +708,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blogs/G50vsML/catalog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/ML_algorithm_catalog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/kNN.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="821">
+          <caret line="182" column="60" lean-forward="true" selection-start-line="182" selection-start-column="60" selection-end-line="182" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/逻辑回归代码与数据/horseColicTest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/logistic回归.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="252" column="58" lean-forward="true" selection-start-line="252" selection-start-column="58" selection-end-line="252" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blogs/G50vsML/ML_algorithm/Beyes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="346" column="51" lean-forward="true" selection-start-line="346" selection-start-column="51" selection-end-line="346" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="-7099">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#13133#13139#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

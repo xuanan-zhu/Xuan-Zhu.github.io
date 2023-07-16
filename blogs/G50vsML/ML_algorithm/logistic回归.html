@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+
+    <title>逻辑回归的自我介绍</title>
+</head>
+<body>
+<a href="./ML_algorithm_catalog.html">返回</a>
+<h1>逻辑回归的简单介绍</h1>
+<p>大家好，还是那句老话，这篇博客将简单通俗地介绍一个用于数据分类的Python代码。机器学习，无非就是六个步骤，<br>
+收集数据：采用任意方法收集数据<br>
+准备数据：由于需要进行距离计算，因此要求数据类型为数据型。<br>
+另外，结构化数据格式则最佳。<br>
+分析数据：采用任意方法对数据进行分析。<br>
+训练算法：大部分时间将用于训练，训练的目的是为了找到最佳的分类回归系数。<br>
+测试算法：一旦训练步骤完成，分类将会很快。<br>
+使用算法：首先，我们需要输入一些数据，并将其转换成对应的结构化数值；<br>
+接着，基于训练好的回归系数就可以对这些数值进行简单的回归计算，判定它们属于<br>
+哪个类别；在这之后，我们就可以在输出的类别上做一些其他分析工作。<br>
+优点：计算代价不高，易于理解和实现<br>
+缺点：容易欠拟合，分类精度可能不高。
+适用数据类型：数值型和标称型数据。
+</p>
+
+
+<h2>1. 收集数据</h2>
+<p>今天我们将学习最优化算法，数据就选一些测试数据，我们主要学习原理，后面会举一些例子</p>
+<br>
+<h2>2. 准备输入数据</h2>
+<pre><code class="language-javascript">
+    def loadDataSet():
+    dataMat = []
+    labelMat = []
+    fr = open('testSet.txt')
+    for line in fr.readlines():
+        lineArr = line.strip().split()
+        dataMat.append([1.0, float(lineArr[0]), float(lineArr[1])])
+        labelMat.append(int(lineArr[2]))
+    return dataMat, labelMat
+</code></pre>
+<p>数据组成是特征值+1.0。这个1.0很讲究，先保存悬念，后面会用到</p>
+<br>
+
+<h2>3. 分析输入数据</h2>
+<p>我们直接过</p>
+
+
+<h2>4. 训练算法</h2>
+<p>
+    原理是重点，我们今天讲的逻辑回归，可以简单理解成，我们通过训练，写出了一个函数，该函数
+    输入待测样品的特征向量就可以返回他的类别。好那么我们该怎么去构建这个函数？
+</p>
+<p>
+    首先我们可以想，我们以前学了分段函数，这样我们通过特征值与参数的组合计算得出X（X = x1*k1 + x2*k2 + x3*k3），X带入函数得到0或者1.
+    这样我们就可以分类了。但是，问题就是分段函数可能不连续，某些区域不可导，这样我们不好训练。
+</p>
+<p>
+    那么我们可以用sigmoid函数代替，这个函数在零附近变化极大也连续，完全满足我们的要求，带入X，得到
+    大于0.5的y就是1类型，小于0.5就是0类型。
+</p>
+
+<pre><code class="language-javascript">
+    def sigmoid(inX):
+    return 1.0 / (1 + exp(-inX))
+
+    #或者做一些预处理，当然预处理要根据实际情况，不然可能错误率会更高，下面的所有测试用上面的来做
+    import numpy as np
+
+def sigmoid(inX):
+    max_value = np.max(inX)
+    min_value = np.min(inX)
+
+    # 检查分母是否为零，并进行处理
+    denominator = max_value - min_value
+    if denominator == 0:
+        denominator = 1e-8
+
+    normalized_X = (inX - min_value) / denominator
+    exp_values = np.exp(-normalized_X)
+    return 1.0 / (1 + exp_values)
+</code></pre>
+<p>
+    接下来我们讲讲梯度上升算法，目的是不断优化模型是其跟贴切训练集，你可以理解成，现在有个模型，我要给他喂数据，
+    数据扔进去，他会计算模型与数据的差距，然后整个模型会向该训练数据契合的方向修改（修改参数），修改的幅度就是步长。
+    以下是该方法函数。
+</p>
+<pre><code class="language-javascript">
+    from numpy import *
+def gradAscent(dataMatIn, classLabels):
+    dataMatrix = mat(dataMatIn)
+    labelMat = mat(classLabels).transpose()
+    m, n = shape(dataMatrix)
+    alpha = 0.001
+    maxCycles = 500
+    weights = ones((n, 1))
+    for k in range(maxCycles):
+        h = sigmoid(dataMatrix*weights)
+        error = (labelMat - h)
+        weights = weights + alpha * dataMatrix.transpose() * error
+    return weights
+
+    #上面的太繁琐高质量巨大，我们对其改进，一个一个加入训练，一次只训练一个。
+
+    def stocgradAscent0(dataMatIn, classLabels, numIter = 150):
+    dataMatrix = mat(dataMatIn)
+    labelMat = mat(classLabels).transpose()
+    m, n = shape(dataMatrix)
+    weights = ones((n,1))
+    alpha = 0.01
+    for i in range(m):
+         h = sigmoid(sum(dataMatrix[i] * weights))
+         error = classLabels[i] - h
+         weights = weights + alpha * error * dataMatrix[i].transpose()
+    return weights
+
+    #但是还是不行，因为我们发现不对劲，步长没有改变，会有什么问题呢？思考一下不难发现，假如我们用该方法训练了1亿个数据，
+    但是，我们再训练一个数据，这个数据不巧的是错误的，完全错误的。那么模型就会照常一步走过去，造成波动。常理来说，因为前面这么多数据训练出来的结果。
+    不应该这么容易被修改。所以作出改进，数据量越大，步长越小，这样可以减少波动。
+
+    from numpy import *
+def stocgradAscent1(dataMatIn, classLabels, numIter = 150):
+    dataMatrix = mat(dataMatIn)
+    labelMat = mat(classLabels).transpose()
+    m, n = shape(dataMatrix)
+    weights = ones((n,1))
+    for j in range(numIter):
+        dataIndex = list(range(m))
+        for i in range(m):
+            alpha = 4/(1.0 + j + i) + 0.01
+            randIndex = int(random.uniform(0, len(dataIndex)))
+            h = sigmoid(sum(dataMatrix[randIndex] * weights))
+            error = classLabels[randIndex] - h
+            weights = weights + alpha * error * dataMatrix[randIndex].transpose()
+            del(dataIndex[randIndex])
+    return weights
+
+</code></pre>
+<p>讲讲上面的伏笔，为什么设置多一个1.0？（省流：最小二乘法求一元一次函数参数，为什么还有个常数b？）
+    在逻辑回归中，偏移量（bias）是模型的一个参数，用于调整模型的预测结果。偏移量可以看作是一个常数项，它对应于输入特征为0时的输出。在数学表示中，偏移量通常用符号 "b" 表示。
+    偏移量在逻辑回归中起到平移决策边界的作用。它通过改变模型的截距（intercept）来控制模型的输出值的偏移。偏移量可以使得模型对输入数据在特征空间中的位置进行调整，从而更好地拟合数据。
+    在逻辑回归中，模型的预测结果是通过将输入特征与权重相乘，然后经过sigmoid函数转换得到的。偏移量在这个过程中与权重一起起到调整作用，影响模型对样本的分类结果。
+    设置偏移量为1.0（或其他合适的值）是对模型的一个选择，它可以用来控制模型输出的基准线。通过调整偏移量，你可以改变模型的输出值范围和偏移，从而更好地适应你的数据和问题。
+    需要注意的是，选择适当的偏移量值需要结合具体的数据和问题进行调试和验证。一般来说，初始值可以设定为0，然后通过训练过程中的参数更新来调整偏移量的值，以使模型更好地拟合数据。</p>
+
+<p>
+    接下来，我们拟合一波并且可视化看看效果~,
+</p>
+<pre><code class="language-javascript">
+    def plotBestFit():
+    import matplotlib.pyplot as plt
+    dataMat, labelMat = loadDataSet()
+    weights = stocgradAscent1(dataMat, labelMat, 500) #选梯度算法函数
+    dataArr = array (dataMat)
+    n = shape(dataArr)[0]
+    xcord1 = []
+    ycord1 = []
+    xcord2 = []
+    ycord2 = []
+    for i in range(n):
+        if int(labelMat[i]) == 1:
+            xcord1.append(dataArr[i, 1])
+            ycord1.append(dataArr[i, 2])
+        else:
+            xcord2.append(dataArr[i, 1])
+            ycord2.append(dataArr[i, 2])
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax.scatter(xcord1, ycord1, s = 30, c='red', marker = 's')
+    ax.scatter(xcord2, ycord2, s = 30, c='green')
+    x = arange(-3.0, 3.0, 0.1)
+    y = (-float(weights[0]) - float(weights[1]) * x) / float(weights[2])
+
+    ax.plot(x,y)
+    plt.xlabel('X1')
+    plt.ylabel('X2')
+    plt.show()
+
+    plotBestFit()
+
+    output:
+</code>
+</pre>
+
+<img src="./逻辑回归代码与数据/拟合可视化.png">
+<p>可以看到基本上能分好大部分数据的类别</p>
+
+<h2>5. 测试算法</h2>
+<p>我们可以设置测试集，对训练完的模型进行测试。下面给出下一个小节用到的测试函数</p>
+<pre><code class="language-javascript">
+    def colicTest():
+    frTrain = open('horseColicTraining.txt')
+    frTest = open('horseColicTest.txt')
+    trainingSet = []
+    trainingLabels = []
+    for line in frTrain.readlines():
+        currLine = line.strip().split('\t')
+        lineArr = []
+        for i in range(21):
+            lineArr.append(float(currLine[i]))
+        trainingSet.append(lineArr)
+        trainingLabels.append(float(currLine[21]))
+    trainingWeights = stocgradAscent1(array(trainingSet), trainingLabels, 500)
+    errorCount = 0
+    numTestVec = 0.0
+    for line in frTest.readlines():
+        numTestVec += 1.0
+        currLine = line.strip().split('\t')
+        lineArr = []
+        for i in range(21):
+            lineArr.append(float(currLine[i]))
+        if int(classifyVector(array(lineArr), trainingWeights)) != int(currLine[21]):
+            errorCount += 1
+    errorRate = (float(errorCount)/numTestVec)
+    print("the error rate of this test is :%f" % errorRate)
+    return errorRate
+
+    def multiTest():
+    numTests = 10
+    errorSum = 0.0
+    for k in range(numTests):
+        errorSum += colicTest()
+    print("after %d iterations the average error rate is: %f" % (numTests, errorSum/float(numTests)))
+
+  </code></pre>
+<br>
+
+
+
+<h2>6. 应用算法</h2>
+<p>
+    我们用到的是患有疝气的马各项指标和对应马存活状态的数据。
+    我们的数据可能会存在缺失，而numpy不支持缺失值，下列是常用的处理缺失值的方法：
+    1）取特征值的均值。
+    2）特殊值，比如取-1
+    3）直接扔掉（不推荐，数据非常珍贵）
+    4）找相似的样品填补
+    5）用其他机器学习方法预测
+
+    具体问题具体分析，这个例子，缺失值设为零最好，逻辑回归，你设置为零不会对模型对应特征向量参数矫正（
+    由修正公式可知），而且正常值也不会取0，这样也满足特征值这个要求。
+</p>
+<pre><code class="language-javascript">
+
+    #运行
+
+    multiTest()
+
+    # 然后它会报overflow，就是计算exp()时溢出了，用归一化，错误率7成，所以还是没用归一化。
+    # 我看了一下数据，应该是小数点后位数太多了，而且都是零。结果应该是系统默认直接舍去了，舍去0完全没问题的。
+    # ，最后结果还算可以。当然可以进一步优化
+
+    # output:
+
+    the error rate of this test is :0.477612
+    the error rate of this test is :0.388060
+    the error rate of this test is :0.283582
+    the error rate of this test is :0.373134
+    the error rate of this test is :0.417910
+    the error rate of this test is :0.298507
+    the error rate of this test is :0.477612
+    the error rate of this test is :0.358209
+    the error rate of this test is :0.343284
+    the error rate of this test is :0.343284
+    after 10 iterations the average error rate is: 0.376119
+  </code></pre>
+
+例子来自：Machine Learning in Action，若侵犯版权，请联系我删除，谢谢。
+<footer>
+    <p>版权所有 &copy; 2023 G blog</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/prismjs"></script>
+</body>
+</html>
